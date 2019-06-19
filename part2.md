@@ -1,20 +1,3 @@
-[Data Check]
-$ cd /training/analyst/data/Sample\ Examination/
-
-[Import Test Files]
-$ hdfs dfs -mkdir /user/exam
-$ hdfs dfs -put Problem1 /user/exam/Problem1
-$ hdfs dfs -put Problem2 /user/exam/Problem2
-$ hdfs dfs -put Problem3 /user/exam/Problem3
-$ hdfs dfs -put Problem4 /user/exam/Problem4
-$ hdfs dfs -put Problem5 /user/exam/Problem5
-$ hdfs dfs -put Problem6 /user/exam/Problem6
-$ hdfs dfs -put Problem7 /user/exam/Problem7
-$ hdfs dfs -put Problem8 /user/exam/Problem8
-$ hdfs dfs -put Problem9 /user/exam/Problem9
-$ hdfs dfs -put Problem10 /user/exam/Problem10
-
-
 ###Incident 1
 
 -Create Database
