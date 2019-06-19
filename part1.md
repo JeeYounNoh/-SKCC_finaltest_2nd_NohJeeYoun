@@ -23,7 +23,7 @@ $ sudo yum update -y
 $ sudo yum install -y wget
 ```
 
-![image](C:\Users\SKCC\Desktop\-SKCC_finaltest_2nd_NohJeeYoun\show file.png)
+![Image text](show file.png)
 
   - Create a user '**training**' with the gid '**wheel**' and set the password
 ```Bash
