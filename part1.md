@@ -9,6 +9,7 @@ $ sudo usermod -a -G skcc training
 $ sudo visudo
 ```
 -sudo capability 주는 것, ip list, lunux release, fs capacity list, yum output, /etc/ list, getent output 은 모두 image에 별도 첨부
+
 ![allow group sudo](https://user-images.githubusercontent.com/48976454/59750017-1d518e80-92b9-11e9-984d-12e8792f0429.png)
 ![show ip](https://user-images.githubusercontent.com/48976454/59750081-2f333180-92b9-11e9-80d3-8a0bda422c81.png)
 ![yum](https://user-images.githubusercontent.com/48976454/59750090-31958b80-92b9-11e9-83df-d81c914bb476.png)
