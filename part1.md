@@ -8,7 +8,7 @@ $ sudo groupadd skcc
 $ sudo usermod -a -G skcc training
 $ sudo visudo
 ```
-
+-sudo capability 주는 것, ip list, fs capacity list, yum output, /etc/ list, getent output 은 모두 image에 별도 첨부
 
 ###Install a MySQL server
 
