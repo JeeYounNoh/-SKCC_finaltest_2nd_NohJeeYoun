@@ -10,7 +10,7 @@ FIELDS TERMINATED BY ','
 LOCATION '/user/exam/Problem1'
 
 [Excute Query]
-A) select a.id, a.type, a.status, a.amount,
+select a.id, a.type, a.status, a.amount,
 (b.average - a.amount) as difference
 from account a
 join
@@ -33,7 +33,7 @@ file format. The files contain the following columns and types:
 2. The table must point to the existing data in HDFS
 
 [Make Table]
-A) CREATE EXTERNAL TABLE solution (
+CREATE EXTERNAL TABLE solution (
 id int, fname string, lname string, address string, city string, state string, zip string, birthday string,
 hireday string )
 stored as parquet
@@ -55,14 +55,14 @@ customer
 3. Maintain the same column names and datatypes in the new table as the fields from the customer table
 
 [Make Table]
-A) create external table solution3
+create external table solution3
 ( id STRING, fname string, lname string, hphone string)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 LOCATION '/user/exam/Problem3/customer'
 
 [review]
-A) select * from solution;
+select * from solution;
 
 
 Incident 4
@@ -82,21 +82,21 @@ expanded, nine-digit zip codes. The new files are in the HDFS directory
 3. Only include customers whose state is ‘CA’
 
 [Excute on PIG]
-A) employee1 = LOAD '/user/training/problem4/data/employee1' AS (customerID:Int, fname:chararray,
+employee1 = LOAD '/user/training/problem4/data/employee1' AS (customerID:Int, fname:chararray,
 lname:chararray, address:chararray, city:chararray, state:chararray, zip: chararray);
 e1 = FOREACH employee1 GENERATE customerID, fname, lname, address, city, state,
 SUBSTRING(zip,0,5);
 
-A) employee2 = LOAD '/user/training/problem4/data/employee2' USING PigStorage(',') AS (customerID:Int,
+employee2 = LOAD '/user/training/problem4/data/employee2' USING PigStorage(',') AS (customerID:Int,
 junk:Int, lname:chararray, fname:chararray, address:chararray, city:chararray, state:chararray, zip:
 chararray);
 
-A) e2 = FOREACH employee2 GENERATE customerID, UCFIRST(LOWER(fname)),
+e2 = FOREACH employee2 GENERATE customerID, UCFIRST(LOWER(fname)),
 UCFIRST(LOWER(lname)), address, city, state, zip;
 
-A) both = UNION e1 , e2;
+both = UNION e1 , e2;
 
-A) STORE both INTO '/user/training/problem4/solution/'
+STORE both INTO '/user/training/problem4/solution/'
 
 Incident 5
 [Instructions]
@@ -116,16 +116,16 @@ records are stored in the customer metastore table in the problem5 database.
 
 [Make Table]
 
-A) create external table customer5 ( id int, fname string, lname string, address string, city string, state
+create external table customer5 ( id int, fname string, lname string, address string, city string, state
 string, zip string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION
 "/user/exam/Problem5/customer";
 
-A)create external table employee5 ( id int, fname string, lname string, address string, city string, state
+create external table employee5 ( id int, fname string, lname string, address string, city string, state
 string, zip string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION
 "/user/exam/Problem5/employee";
 
 [Excute Query]
-A) select fname, lname, city, state from customer5 where (city = "Palo Alto" AND state = "CA") UNION
+select fname, lname, city, state from customer5 where (city = "Palo Alto" AND state = "CA") UNION
 ALL select fname, lname, city, state from employee5 where (city = "Palo Alto" AND state = "CA");
 
 Incident 6
@@ -143,11 +143,11 @@ employee table
 3. The birthday field in the solution table should be truncated to only contain month/day instead of the
 current month/day/year data that is in the employee table
 
-A) create external table employee6 ( id int, fname string, lname string, address string, city string, state string,
+create external table employee6 ( id int, fname string, lname string, address string, city string, state string,
 zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION
 "/user/exam/Problem6/employee";
 
-A) create table solution6 as select id, fname, lname, address, city, state, zip, substr(birthday,1,5) from
+create table solution6 as select id, fname, lname, address, city, state, zip, substr(birthday,1,5) from
 employee6;
 
 [review]
@@ -169,12 +169,12 @@ whose city is ‘Seattle’
 5. Duplicate names should be included (if any)
 
 [Make Table]
-A) create external table employee7 ( id int, fname string, lname string, address string, city string, state
+create external table employee7 ( id int, fname string, lname string, address string, city string, state
 string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 LOCATION "/user/exam/Problem7/employee";
 
 [Excute Query]
-A) select concat(fname, " ", lname) as name
+select concat(fname, " ", lname) as name
 from employee7
 where city = "Seattle"
 order by name;
@@ -195,7 +195,7 @@ The data files are in the HDFS directory /user/training/problem8/data/customer/.
 1. Export all of the customer data from HDFS into the MySQL solution table
 2. The solution table already exists in the MySQL database but currently has no rows
 
-A) sqoop export
+sqoop export
 --connect jdbc:mysql://localhost/problem8
 --username cloudera
 --password cloudera
@@ -204,7 +204,7 @@ A) sqoop export
 --export-dir hdfs://localhost:8020/user/training/problem8/data/customer
 
 [review]
-A) select * from solution;
+select * from solution;
 
 Incident 9
 [Instructions]
@@ -218,14 +218,14 @@ The customer records are stored in the customer table in the problem9 database. 
 3. The solution table should have all of the data from the customer table, with the addition of the letter ‘A’  to the existing id values to make them unique
 
 [Make Table]
-A) create external table customer9 ( id int, fname string, lname string, address string, city string, state string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+create external table customer9 ( id int, fname string, lname string, address string, city string, state string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 LOCATION "/user/exam/Problem9/customer";
 
 [Excute Query]
-A) create table solution9 as select concat("A", cast(id as string)) as id, fname, lname, address, city, state, zip, birthday from customer9;
+create table solution9 as select concat("A", cast(id as string)) as id, fname, lname, address, city, state, zip, birthday from customer9;
 
 [Review]
-A) select * from solution9 limit 10;
+select * from solution9 limit 10;
 
 
 Incident 10
@@ -245,11 +245,11 @@ the charge.
 5. The billdate column should only contain the date field and no time information
 
 [[Make Table]]
-A) create external table customer10 ( id int, fname string, lname string, address string, city string, state string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION "/user/exam/Problem9/customer";
-A) create external table billing10 ( id int, charge double, tstamp string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION "/user/exam/Problem10/billing";
+create external table customer10 ( id int, fname string, lname string, address string, city string, state string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION "/user/exam/Problem9/customer";
+create external table billing10 ( id int, charge double, tstamp string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION "/user/exam/Problem10/billing";
 
 [Make View]
-A) create view solution as select c.id as id, c.fname as fname, c.lname as lname, c.city as city, c.state as state, b.charge as charge, SUBSTR(b.tstamp,0,10) as billdate from customer c join billing b on (c.id = b.id);
+create view solution as select c.id as id, c.fname as fname, c.lname as lname, c.city as city, c.state as state, b.charge as charge, SUBSTR(b.tstamp,0,10) as billdate from customer c join billing b on (c.id = b.id);
 
 Incident 11
 [Instructions]
@@ -266,7 +266,7 @@ the report output
 
 a. Which top three products has Dualcore sold more of than any other? Hint: Remember that if you use aGROUP BY clause, you must group by all fields listed in the SELECT clause that are not part of anaggregate function.
 
-A) SELECT c.name, count(*) FROM orders a, order_details b, products c WHERE a.order_id =
+SELECT c.name, count(*) FROM orders a, order_details b, products c WHERE a.order_id =
 b.order_id AND b.prod_id = c.prod_id AND c.brand = 'Dualcore' GROUP BY c.name LIMIT 3;
 
 b. Calculating Revenue and Profit – write a query to show Dualcore’s revenue (total price of products sold) and profit (price minus cost) by date. Hint: The order_date column in the orders table is of type TIMESTAMP. Use the function to_date to get just the date portion of the value.
