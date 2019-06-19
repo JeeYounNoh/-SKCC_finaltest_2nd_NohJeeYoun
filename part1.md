@@ -8,7 +8,13 @@ $ sudo groupadd skcc
 $ sudo usermod -a -G skcc training
 $ sudo visudo
 ```
--sudo capability 주는 것, ip list, fs capacity list, yum output, /etc/ list, getent output 은 모두 image에 별도 첨부
+-sudo capability 주는 것, ip list, lunux release, fs capacity list, yum output, /etc/ list, getent output 은 모두 image에 별도 첨부
+![allow group sudo](https://user-images.githubusercontent.com/48976454/59750017-1d518e80-92b9-11e9-984d-12e8792f0429.png)
+![show ip](https://user-images.githubusercontent.com/48976454/59750081-2f333180-92b9-11e9-80d3-8a0bda422c81.png)
+![yum](https://user-images.githubusercontent.com/48976454/59750090-31958b80-92b9-11e9-83df-d81c914bb476.png)
+![show file](https://user-images.githubusercontent.com/48976454/59750057-29d5e700-92b9-11e9-9977-54c31bfc71c9.png)
+![yum](https://user-images.githubusercontent.com/48976454/59750090-31958b80-92b9-11e9-83df-d81c914bb476.png)
+![getent](https://user-images.githubusercontent.com/48976454/59750041-24789c80-92b9-11e9-918f-3e8d33746eae.png)
 
 ###Install a MySQL server
 
@@ -339,36 +345,48 @@ $ sudo tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log
 
   1. Open Cloudera Manager Console from a browser
   -이미지별도첨부(install-cdh-001.png)
+  ![install-cdh-001](https://user-images.githubusercontent.com/48976454/59750619-0a8b8980-92ba-11e9-8b7a-5ddf76d91455.png)
 
   2. Put target nodes' FQDN
   -이미지별도첨부(install-cdh-002.png)
+![install-cdh-002](https://user-images.githubusercontent.com/48976454/59750620-0a8b8980-92ba-11e9-8f12-c5e5d4bcd8f3.png)
 
   3. Select nodes on the list
   -이미지별도첨부(install-cdh-003.png)
+![install-cdh-003](https://user-images.githubusercontent.com/48976454/59750621-0a8b8980-92ba-11e9-83f1-97a5be202fd3.png)
 
   4. Put account information for agent installation
   -이미지별도첨부(install-cdh-012.png)
+![install-cdh-012](https://user-images.githubusercontent.com/48976454/59750618-09f2f300-92ba-11e9-91b6-dff5c4c51658.png)
 
   5. Check the installation steps on each nodes
   -이미지별도첨부(install-cdh-004.png)
+![install-cdh-004](https://user-images.githubusercontent.com/48976454/59750625-0b242000-92ba-11e9-8527-ec70263c15b4.png)
 
   6. Set roles on each nodes [(Reference Link)](https://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_ig_host_allocations.html)
   -이미지별도첨부(install-cdh-005.png)
+![install-cdh-005](https://user-images.githubusercontent.com/48976454/59750626-0b242000-92ba-11e9-8eeb-a7f6290d4918.png)
 
   7. Check roles on each nodes
   -이미지별도첨부(install-cdh-006.png)
+![install-cdh-006](https://user-images.githubusercontent.com/48976454/59750627-0b242000-92ba-11e9-8385-a688183bb3e2.png)
 
   8. Set Database information for each services
   -이미지별도첨부(install-cdh-007.png)
+![install-cdh-007](https://user-images.githubusercontent.com/48976454/59750629-0c554d00-92ba-11e9-8a5d-b6d515083c26.png)
 
   9. Check cluster setting
   -이미지별도첨부(install-cdh-008.png)
+![install-cdh-008](https://user-images.githubusercontent.com/48976454/59750631-0c554d00-92ba-11e9-97a3-8e4b7a05d672.png)
 
   10. Check cluster setting steps on each services
   -이미지별도첨부(install-cdh-009.png)
+![install-cdh-009](https://user-images.githubusercontent.com/48976454/59750633-0cede380-92ba-11e9-980b-d12cba3b4438.png)
 
   11. Final message of cluster installation
   -이미지별도첨부(install-cdh-010.png)
+![install-cdh-010](https://user-images.githubusercontent.com/48976454/59750634-0cede380-92ba-11e9-9256-6f90ea6305e4.png)
 
   12. Cloudera Manager main page
   -이미지별도첨부(install-cdh-011.png)
+![install-cdh-011](https://user-images.githubusercontent.com/48976454/59750617-09f2f300-92ba-11e9-8bff-d8ad2153a7d0.png)
