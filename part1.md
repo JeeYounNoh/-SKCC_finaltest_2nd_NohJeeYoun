@@ -1,6 +1,9 @@
 ##create a CDH Cluster on AWS
 a. Linux setup
-- Run **_yum update_** and install **wget**
-```
-$ sudo yum update -y
-$ sudo yum install -y wget
+$ sudo useradd training
+$ sudo passwd training
+passwd: all authentication tokens updated successfully.
+$ sudo groupadd skcc
+$ sudo usermod -a -G skcc training
+$ sudo visudo
+![image](Image 1.png)
