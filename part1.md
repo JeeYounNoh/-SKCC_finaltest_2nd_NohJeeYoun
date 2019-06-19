@@ -1,5 +1,4 @@
-##create a CDH Cluster on AWS
-
+## Create a CDH Cluster on AWS
 ###Linux setup
 
 ```
