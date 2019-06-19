@@ -2,8 +2,8 @@
 
 -Create Database
 ```
-create database exam;
-use exam;
+create database training;
+use training;
 ```
 -Make Table in Hive
 ```
