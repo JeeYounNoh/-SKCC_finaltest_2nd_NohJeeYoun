@@ -8,6 +8,7 @@ $ sudo groupadd skcc
 $ sudo usermod -a -G skcc training
 $ sudo visudo
 ```
+
 ![Image of sudo](last/allow group sudo.png)
 
 ###Install a MySQL server
