@@ -11,7 +11,7 @@ create external table account (
 id STRING, status STRING, amount INT, type STRING)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
-LOCATION '/user/exam/Problem1'
+LOCATION '/home/training/problem1'
 ```
 -Excute Query
 ```
@@ -45,7 +45,7 @@ CREATE EXTERNAL TABLE solution (
 id int, fname string, lname string, address string, city string, state string, zip string, birthday string,
 hireday string )
 stored as parquet
-location “/user/exam/Problem2/data/employee/“
+location “/user/training/problem2/data/employee/“
 ```
 
 ###Incident 3
@@ -71,7 +71,7 @@ create external table solution3
 ( id STRING, fname string, lname string, hphone string)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
-LOCATION '/user/exam/Problem3/customer'
+LOCATION '/user/training/problem3/customer'
 ```
 -review
 ```
@@ -135,11 +135,11 @@ records are stored in the customer metastore table in the problem5 database.
 ```
 create external table customer5 ( id int, fname string, lname string, address string, city string, state
 string, zip string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION
-"/user/exam/Problem5/customer";
+"/home/training/problem5/customer";
 
 create external table employee5 ( id int, fname string, lname string, address string, city string, state
 string, zip string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION
-"/user/exam/Problem5/employee";
+"/home/training/problem5/employee";
 ```
 -Excute Query
 ```
@@ -165,7 +165,7 @@ current month/day/year data that is in the employee table
 ```
 create external table employee6 ( id int, fname string, lname string, address string, city string, state string,
 zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION
-"/user/exam/Problem6/employee";
+"/user/training/problem6/employee";
 
 create table solution6 as select id, fname, lname, address, city, state, zip, substr(birthday,1,5) from
 employee6;
@@ -194,7 +194,7 @@ whose city is ‘Seattle’
 ```
 create external table employee7 ( id int, fname string, lname string, address string, city string, state
 string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
-LOCATION "/user/exam/Problem7/employee";
+LOCATION "/home/training/problem7/employee";
 ```
 -Excute Query
 ```
@@ -249,7 +249,7 @@ The customer records are stored in the customer table in the problem9 database. 
 -Make Table
 ```
 create external table customer9 ( id int, fname string, lname string, address string, city string, state string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
-LOCATION "/user/exam/Problem9/customer";
+LOCATION "/user/training/problem9/customer";
 ```
 
 -Excute Query
@@ -281,8 +281,8 @@ the charge.
 
 -Make Table
 ```
-create external table customer10 ( id int, fname string, lname string, address string, city string, state string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION "/user/exam/Problem9/customer";
-create external table billing10 ( id int, charge double, tstamp string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION "/user/exam/Problem10/billing";
+create external table customer10 ( id int, fname string, lname string, address string, city string, state string, zip string, birthday string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION "/user/training/problem9/customer";
+create external table billing10 ( id int, charge double, tstamp string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LOCATION "/user/training/problem10/billing";
 ```
 -Make View
 ```
