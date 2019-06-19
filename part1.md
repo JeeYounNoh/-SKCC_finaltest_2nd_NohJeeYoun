@@ -332,3 +332,49 @@ $ sudo systemctl start cloudera-scm-server
 $ sudo tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log
 ```
   - **Do not continue until you can browse your CM instance at port 7180**
+  ### Cloudera Manager Install Lab
+  #### Install a cluster and deploy CDH
+  Adhere to the following requirements while creating your cluster:
+    - Do not use Single User Mode. Do not. Don't do it.
+    - Ignore any steps in the CM wizard that are marked (Optional)
+    - Install the Data Hub Edition
+    - Install CDH using parcels
+    - Deploy only the Core set of CDH services.
+    - Deploy three ZooKeeper instances.
+      - CM does not tell you to do this but complains if you don't
+
+  1. Open Cloudera Manager Console from a browser
+  -이미지별도첨부(install-cdh-001.png)
+
+  2. Put target nodes' FQDN
+  -이미지별도첨부(install-cdh-002.png)
+
+  3. Select nodes on the list
+  -이미지별도첨부(install-cdh-003.png)
+
+  4. Put account information for agent installation
+  -이미지별도첨부(install-cdh-012.png)
+
+  5. Check the installation steps on each nodes
+  -이미지별도첨부(install-cdh-004.png)
+
+  6. Set roles on each nodes [(Reference Link)](https://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_ig_host_allocations.html)
+  -이미지별도첨부(install-cdh-005.png)
+
+  7. Check roles on each nodes
+  -이미지별도첨부(install-cdh-006.png)
+
+  8. Set Database information for each services
+  -이미지별도첨부(install-cdh-007.png)
+
+  9. Check cluster setting
+  -이미지별도첨부(install-cdh-008.png)
+
+  10. Check cluster setting steps on each services
+  -이미지별도첨부(install-cdh-009.png)
+
+  11. Final message of cluster installation
+  -이미지별도첨부(install-cdh-010.png)
+
+  12. Cloudera Manager main page
+  -이미지별도첨부(install-cdh-011.png)
