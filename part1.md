@@ -1,4 +1,3 @@
-## Create a CDH Cluster on AWS
 ###Linux setup
 
 ```
@@ -10,17 +9,12 @@ $ sudo usermod -a -G skcc training
 $ sudo visudo
 ```
 
-
-
-
-
 ###Install a MySQL server
 
 ```
 $ sudo yum install -y mariadb-server
 ```
 
-## CM Install Lab
 ### System Configuration Checks
 
   - Run **_yum update_** and install **wget**
