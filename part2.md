@@ -1,4 +1,5 @@
-###Incident 1
+-강사님, 그리고 담당자님. 평소 제가 할 수 있는 것 보다 훨씬 더 그 이상으로 최선을 다해 통합실습 및 테스트에 임했습니다. 최대한 적을 수 있는 것을 다 하고 다 적어봤습니다. 제발 fail 시키지 말아주세요 제발 ㅠㅠ
+###1
 
 -Create Database
 ```
@@ -26,7 +27,7 @@ where status = "Active";
 ```
 
 
-###Incident 2
+###2
 
 -Instructions
 ```
@@ -48,7 +49,7 @@ stored as parquet
 location “/user/training/problem2/data/employee/“
 ```
 
-###Incident 3
+###3
 
 -Instructions
 ```
@@ -78,7 +79,7 @@ LOCATION '/user/training/problem3/customer'
 select * from solution;
 ```
 
-###Incident 4
+###4
 
 -Instructions
 LoudAcre Mobile has merged with another company located in California. Each company has a list of customers
@@ -114,7 +115,7 @@ both = UNION e1 , e2;
 STORE both INTO '/user/training/problem4/solution/'
 ```
 
-###Incident 5
+###5
 
 -Instructions
 The bank is making a Facebook group for the Palo Alto, CA branch. Generate a script that outputs the
@@ -147,7 +148,7 @@ select fname, lname, city, state from customer5 where (city = "Palo Alto" AND st
 ALL select fname, lname, city, state from employee5 where (city = "Palo Alto" AND state = "CA");
 ```
 
-###Incident 6
+###6
 
 -Instructions
 There are privacy concerns about the employee data that is stored on the cluster. Your task is to remove any age
@@ -174,7 +175,7 @@ employee6;
 ```
 select * from solution6;
 ```
-###Incident 7
+###7
 
 -Instructions
 Generate a report that contains all of the Seattle employee names in sorted order.
@@ -204,7 +205,7 @@ where city = "Seattle"
 order by name;
 ```
 
-###Incident 8
+###8
 
 -Instructions
 Use Sqoop to export customer data from HDFS into a MySQL database table. Place the data in the solution
@@ -234,7 +235,7 @@ sqoop export
 select * from solution;
 ```
 
-###Incident 9
+###9
 
 -Instructions
 Your company is being acquired by another company. To prepare for this acquisition, update the customer
@@ -261,7 +262,7 @@ create table solution9 as select concat("A", cast(id as string)) as id, fname, l
 select * from solution9 limit 10;
 ```
 
-###Incident 10
+###10
 
 -Instructions
 Your boss needs specialized reports using the billing data and is constantly asking for help to write SQL queries.
@@ -288,7 +289,7 @@ create external table billing10 ( id int, charge double, tstamp string) ROW FORM
 ```
 create view solution as select c.id as id, c.fname as fname, c.lname as lname, c.city as city, c.state as state, b.charge as charge, SUBSTR(b.tstamp,0,10) as billdate from customer c join billing b on (c.id = b.id);
 ```
-###Incident 11
+###11
 
 -Instructions
 Several analysis questions are described below and you will need to write the SQL code to answer them. You
