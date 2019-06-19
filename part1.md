@@ -1,6 +1,6 @@
 ##create a CDH Cluster on AWS
 
-a. Linux setup
+###Linux setup
 
 ```
 $ sudo useradd training
@@ -13,3 +13,11 @@ $ sudo visudo
 ![image](screenshot/Image 2.png)
 ![image](screenshot/Image 4.png)
 ![image](screenshot/Image 5.png)
+
+
+
+
+###Install a MySQL server
+
+```
+$ sudo yum install -y mariadb-server
