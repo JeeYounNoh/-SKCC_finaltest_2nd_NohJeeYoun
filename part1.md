@@ -23,8 +23,6 @@ $ sudo yum update -y
 $ sudo yum install -y wget
 ```
 
-![Image text](show file.png)
-
   - Create a user '**training**' with the gid '**wheel**' and set the password
 ```Bash
 $ sudo useradd training -g wheel
