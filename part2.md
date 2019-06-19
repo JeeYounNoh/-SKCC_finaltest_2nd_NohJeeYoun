@@ -1,4 +1,5 @@
 ###Incident 1
+
 -Create Database
 ```
 create database exam;
@@ -26,6 +27,7 @@ where status = "Active";
 
 
 ###Incident 2
+
 -Instructions
 ```
 Create an employee table in the metastore that contains the employee records stored in HDFS.
@@ -47,6 +49,7 @@ location “/user/exam/Problem2/data/employee/“
 ```
 
 ###Incident 3
+
 -Instructions
 ```
 Generate a table that contains all customers who have negative account balances.
@@ -76,6 +79,7 @@ select * from solution;
 ```
 
 ###Incident 4
+
 -Instructions
 LoudAcre Mobile has merged with another company located in California. Each company has a list of customers
 in different formats. Combine the two customer lists into a single dataset using an identical schema.
@@ -111,6 +115,7 @@ STORE both INTO '/user/training/problem4/solution/'
 ```
 
 ###Incident 5
+
 -Instructions
 The bank is making a Facebook group for the Palo Alto, CA branch. Generate a script that outputs the
 customers and employees who live in Palo Alto, CA.
@@ -143,6 +148,7 @@ ALL select fname, lname, city, state from employee5 where (city = "Palo Alto" AN
 ```
 
 ###Incident 6
+
 -Instructions
 There are privacy concerns about the employee data that is stored on the cluster. Your task is to remove any age
 information from the employee data by creating a new table for the data analysts to query against.
@@ -169,6 +175,7 @@ employee6;
 select * from solution6;
 ```
 ###Incident 7
+
 -Instructions
 Generate a report that contains all of the Seattle employee names in sorted order.
 
@@ -198,6 +205,7 @@ order by name;
 ```
 
 ###Incident 8
+
 -Instructions
 Use Sqoop to export customer data from HDFS into a MySQL database table. Place the data in the solution
 table in MySQL, which has been created and is currently empty.
@@ -227,6 +235,7 @@ select * from solution;
 ```
 
 ###Incident 9
+
 -Instructions
 Your company is being acquired by another company. To prepare for this acquisition, update the customer
 records to guarantee there will be no duplicate IDs with their existing customer IDs.
@@ -253,6 +262,7 @@ select * from solution9 limit 10;
 ```
 
 ###Incident 10
+
 -Instructions
 Your boss needs specialized reports using the billing data and is constantly asking for help to write SQL queries.
 Create a database view in the metastore so that your boss has customer and billing data joined.
@@ -279,6 +289,7 @@ create external table billing10 ( id int, charge double, tstamp string) ROW FORM
 create view solution as select c.id as id, c.fname as fname, c.lname as lname, c.city as city, c.state as state, b.charge as charge, SUBSTR(b.tstamp,0,10) as billdate from customer c join billing b on (c.id = b.id);
 ```
 ###Incident 11
+
 -Instructions
 Several analysis questions are described below and you will need to write the SQL code to answer them. You
 can use whichever tool you prefer – Impala or Hive – using whichever method you like best, including shell, script, or the Hue Query Editor, to run your queries.
